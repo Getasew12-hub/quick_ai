@@ -5,7 +5,7 @@ import fs from "fs";
 import { v2 as cloudinary } from "cloudinary";
 import axios from "axios";
 import { error } from "console";
-import { PDFParse } from "pdf-parse";
+import pdf from "pdf-parse/lib/pdf-parse.js"
 
 const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
 
@@ -240,9 +240,9 @@ export const ResumeReview = async (req, res) => {
 
     const databufer = fs.readFileSync(pdfFile.path);
 
-    const parser = new PDFParse({ data: databufer });
+    const parser = await pdf(databufer);
 
-    const result = await parser.getText();
+    const result =  parser.text;
 
     const prompt = `Review the following resume and provide constructive  feedback on its strength,weekness and the area of improvement.Resume content: ${result.text}`;
 
