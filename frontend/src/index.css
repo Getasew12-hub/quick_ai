@@ -19,8 +19,15 @@
     }
 }
 
+
 .rever-rw, .rever-rw *{
     all: revert !important;
+}
+.hellow{
+    max-height: 500px !important;
+    overflow-y: auto !important;
+    margin-top: 10px !important;
+
 }
 .cl-drawerRoot{
     z-index: 100 !important;

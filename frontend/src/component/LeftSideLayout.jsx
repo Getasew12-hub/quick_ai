@@ -72,11 +72,11 @@ const sidebarData=[
         title:'Review Resume',
         path:"/ai/review-resume"
     },
-    {
-        icon:<Users size={18}/>,
-        title:'Community',
-        path:"/ai/community"
-    },
+    // {
+    //     icon:<Users size={18}/>,
+    //     title:'Community',
+    //     path:"/ai/community"
+    // },
 ]
 
 

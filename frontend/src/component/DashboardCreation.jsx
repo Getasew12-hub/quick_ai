@@ -7,9 +7,9 @@ function DashboardCreation({item}) {
     <div  className=' flex items-center justify-between mt-4 gap-4 max-sm:flex-col max-sm:items-start '>
 
         <div>
-            <p className=''>{item.prompt}</p>
+            <p className=''>{item?.prompt}</p>
             <p className='text-sm text-gray-500 mt-2'>
-                {item.type}- {new Date(item.created_at).toLocaleString()}</p>
+                {item.type}- {new Date(item?.create_at).toLocaleString()}</p>
         </div>
 
         <div className='max-sm:text-right max-sm:w-full '>
@@ -20,9 +20,10 @@ function DashboardCreation({item}) {
      
     
     </div>
+    
 
-  <div className='mt-6 max-h-96 overflow-y-auto rever-rw'>
-        {moreData && (item.content=="image" ? <img src={item.content} alt="image" /> :<Markdown>{item.content}</Markdown>) }
+  <div className='hellow rever-rw ' >
+        {moreData && (item?.content=="image" ? <img src={item?.content} alt="image" /> :<Markdown>{item?.content}</Markdown>) }
       </div>
 </div>
   )
