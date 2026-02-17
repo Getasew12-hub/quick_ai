@@ -16,7 +16,7 @@ function Navbar() {
        <img src={assets.logo} alt="logo image"  className='h-8 md:h-10 lg:h-12' />
 
        {user ? <UserButton  /> :
-        <button onClick={openSignIn} className='flex cursor-pointer justify-center items-center gap-2 bg-linear-to-r from-blue-500 to-indigo-600 text-white rounded-full py-2 px-4 text-sm'>Get started <ArrowRight size={18}/></button>}
+        <button onClick={openSignIn} className='flex cursor-pointer justify-center items-center gap-2 bg-linear-to-r from-blue-500 to-indigo-600 text-white rounded-full py-2 px-4 text-sm max-sm:text-[12px] max-sm:py-1 max-sm:px-2'>Get started <ArrowRight size={18}/></button>}
     </div>
   )
 }
