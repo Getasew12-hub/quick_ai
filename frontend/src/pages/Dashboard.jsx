@@ -10,7 +10,7 @@ import {useAuth} from "@clerk/clerk-react"
 
 function Dashboard() {
   const [ItemData,setItemdata] = React.useState([]);
-  cons [TotalCreation,setTotalCretion]=React.useState(0);
+  const [TotalCreation,setTotalCretion]=React.useState(0);
     const [loading,setLoding]=React.useState(true);
     const {getToken} =useAuth()
  
