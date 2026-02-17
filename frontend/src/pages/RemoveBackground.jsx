@@ -35,6 +35,7 @@ function RemoveBackground() {
 
   async function handleForm(e) {
     e.preventDefault();
+    if(!image) return toast.error("Please upload image");
     setLoding(true);
 
     try {
@@ -122,7 +123,7 @@ function RemoveBackground() {
       {/* right */}
       <div className="bg-white shadow  p-4 rounded-md max-w-lg w-full max-h-96  h-full flex flex-col overflow-hidden">
         <div className="flex justify-between items-center">
-          <h2 className="flex gap-4 font-bold mb-5 text-xl items-center">
+          <h2 className="flex gap-4 font-bold mb-5 text-xl items-center max-sm:text-sm">
             <Eraser className="text-orange-500" /> Processed Image
           </h2>
           {contentGenereate && (
@@ -130,9 +131,9 @@ function RemoveBackground() {
               <button
                 button
                 onClick={downloadImage}
-                className="flex justify-center items-center gap-2 p-2 rounded-m  font-semibold text-white bg-linear-to-r from-orange-400 to-orange-600 text-sm rounded-full"
+                className="flex justify-center items-center gap-2 p-2 rounded-m  font-semibold text-white bg-linear-to-r from-orange-400 to-orange-600 text-sm rounded-full max-sm:text-[12px] max-sm:p-1 max-sm:font-light max-sm:gap-1"
               >
-                <Download size={17} /> Download image
+                <Download size={17} /> Download 
               </button>
             </div>
           )}

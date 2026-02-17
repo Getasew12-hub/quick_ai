@@ -30,6 +30,7 @@ function ReviewResume() {
 
   async function hadleSubmition(e) {
     e.preventDefault();
+     if(!file) return toast.error("Please upload file");
     setLoding(true);
     try {
       const formData = new FormData();
