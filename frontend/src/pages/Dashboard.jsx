@@ -10,6 +10,7 @@ import {useAuth} from "@clerk/clerk-react"
 
 function Dashboard() {
   const [ItemData,setItemdata] = React.useState([]);
+  cons [TotalCreation,setTotalCretion]=React.useState(0);
     const [loading,setLoding]=React.useState(true);
     const {getToken} =useAuth()
  
@@ -34,6 +35,7 @@ function Dashboard() {
         });
       
         setItemdata(response.data.data);
+        setTotalCretion(response.data.T_creation);
         
       } catch (error) {
         toast.error("Somting is wrong");
@@ -58,7 +60,7 @@ if(loading) return <div className='text-black font-bold text-center h-full w-ful
         <div className='bg-white max-w-80 w-full rounded-l-md shadow p-4 flex items-center justify-between'>
           <div>
             <p className='text-sm '>Total Creations</p>
-            <p className='font-bold text-xl '>0</p>
+            <p className='font-bold text-xl '>{TotalCreation}</p>
           </div>
           <button className='bg-linear-to-br from-sky-600 to-green-300 text-white p-2.5 rounded-md '>
               <Sparkles />
