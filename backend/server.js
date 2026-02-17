@@ -7,7 +7,7 @@ import { clerkMiddleware, requireAuth } from "@clerk/express";
 
 import aiRouter from "./routers/ai.router.js";
 import userRouter from "./routers/user.router.js";
-import { Auth } from "./middlewares/auth.js";
+
 
 env.config();
 
@@ -26,17 +26,19 @@ app.use(
   }),
 );
 
-await cloudinaryConfig();
-app.get("/",(req,res)=>{
-    res.send("Your server is Live")
-})
+ cloudinaryConfig();
+
+ app.get("/",(req,res)=>{
+    res.send("API is running....");
+ });
 
 app.use(requireAuth());
 app.use("/api/ai", aiRouter);
 app.use("/api/user", userRouter);
 
 
+
+app.listen(port, () => {
+  console.log("Your server running on port:" + port);
+});
 export default app;
-// app.listen(port, () => {
-//   console.log("Your server running on port:" + port);
-// });
