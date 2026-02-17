@@ -36,7 +36,7 @@ app.use("/api/ai", aiRouter);
 app.use("/api/user", userRouter);
 
 
-
-app.listen(port, () => {
-  console.log("Your server running on port:" + port);
-});
+export default app;
+// app.listen(port, () => {
+//   console.log("Your server running on port:" + port);
+// });
