@@ -1,11 +1,12 @@
 import React from 'react'
 import { assets } from '../assets/assets'
 import { useNavigate } from 'react-router-dom'
-import { useUser } from '@clerk/clerk-react'
+import { useClerk, useUser } from '@clerk/clerk-react'
 
 function Header() {
   const navigate=useNavigate();
   const {user}=useUser();
+  const {openSignIn}=useClerk()
   return (
     <div className='bg-[url("/gradientBackground.png")] bg-cover bg-center bg-no-repeat mt-0 flex flex-col items-center justify-center px-5  h-screen'>
     <div className='max-w-150 max-sm:max-w-90 lg:max-w-200  mx-auto space-y-5  '>
@@ -14,7 +15,7 @@ function Header() {
          <p className='text-gray-500 max-sm:text-sm max-w-120 mx-auto'>Transform your content creation with our suite of premium AI tools. Write articles, generate images, and enhance your workflow.</p>
 
          <div className='flex gap-5 text-sm justify-center mt-8'>
-            <button className='bg-linear-to-r from-blue-500 to-indigo-600 rounded-md hover:scale-105  py-2.5 px-5 text-white transition-transform duration-150' onClick={()=>user ? navigate("/ai") : navigate("/")}>Start creating now</button>
+            <button className='bg-linear-to-r from-blue-500 to-indigo-600 rounded-md hover:scale-105  py-2.5 px-5 text-white transition-transform duration-150' onClick={()=>user ? navigate("/ai") : openSignIn()}>Start creating now</button>
             <button  className='bg-what border border-gray-400 hover:scale-105 rounded-md py-2 px-5 transition-transform duration-150'>Watch demo</button>
 
          </div>
