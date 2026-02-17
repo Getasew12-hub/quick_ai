@@ -32,7 +32,7 @@ app.use(
     res.send("API is running....");
  });
 
-app.use(requireAuth());
+// app.use(requireAuth());
 app.use("/api/ai", aiRouter);
 app.use("/api/user", userRouter);
 
