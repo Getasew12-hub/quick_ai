@@ -155,7 +155,7 @@ export const ImageBackgroundRemove = async (req, res) => {
       ],
     });
 
-    await sql`INSERT INTO creations (content,prompt,user_id,type) VALUES (${result.eager[0].secure_url},${"image background remove"},${userId},'image');`;
+    await sql`INSERT INTO creations (content,prompt,user_id,type) VALUES (${result.eager[0].secure_url},${"image"},${userId},'image');`;
 
     if (userPlan !== "premium") {
       await clerkClient.users.updateUserMetadata(userId, {
@@ -195,7 +195,7 @@ export const ImageObjectRemove = async (req, res) => {
       ],
     });
 
-    await sql`INSERT INTO creations (content,prompt,user_id,type) VALUES (${imageClodnary.secure_url},${"object remove"},${userId},'image');`;
+    await sql`INSERT INTO creations (content,prompt,user_id,type) VALUES (${imageClodnary.secure_url},${"image"},${userId},'image');`;
     if (userPlan !== "premium") {
       await clerkClient.users.updateUserMetadata(userId, {
         privateMetadata: {

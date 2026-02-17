@@ -23,7 +23,7 @@ function DashboardCreation({item}) {
     
 
   <div className='hellow rever-rw ' >
-        {moreData && (item?.content=="image" ? <img src={item?.content} alt="image" /> :<Markdown>{item?.content}</Markdown>) }
+        {moreData && (item?.type=="image" ? <img src={item?.content} alt="image" /> :<Markdown>{item?.content}</Markdown>) }
       </div>
 </div>
   )
