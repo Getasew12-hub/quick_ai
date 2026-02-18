@@ -35,7 +35,7 @@ function WriteArticle() {
         "/ai/generate-article",
         {
           prompt: article,
-          length,
+          length
         },
         {
           headers: {
@@ -43,7 +43,7 @@ function WriteArticle() {
           },
         },
       );
-      const text = resopnese.data.data;
+      const text = resopnese?.data?.data;
       setContentGene("");
       let index = 0;
 
@@ -51,7 +51,7 @@ function WriteArticle() {
         setContentGene((prev) => prev + text[index]);
         index++;
 
-        if (index === text.length) {
+        if (index === text?.length) {
           clearInterval(interval);
         }
       }, 5);
@@ -88,9 +88,9 @@ function WriteArticle() {
           <div className="flex flex-wrap gap-3 max-w-80">
             {artilceLength.map((item) => (
               <span
-                onClick={() => setLength(item.length)}
-                key={item.length}
-                className={`text-[12px] cursor-pointer border border-gray-400 w-fit py-0.5 px-2 rounded-full ${length == item.length && "bg-blue-400/10 border-blue-500! text-blue-500!"}`}
+                onClick={() => setLength(item?.length)}
+                key={item?.length}
+                className={`text-[12px] cursor-pointer border border-gray-400 w-fit py-0.5 px-2 rounded-full ${length == item?.length && "bg-blue-400/10 border-blue-500! text-blue-500!"}`}
               >
                 {item.label}
               </span>
@@ -119,7 +119,7 @@ function WriteArticle() {
           <SquarePen className="text-blue-500" /> Article Configuration
         </h2>
 
-        {contentGenereate && contentGenereate.length > 0 ? (
+        {contentGenereate && contentGenereate?.length > 0 ? (
           <div className="rever-rw">
             <Markdown>{contentGenereate}</Markdown>
           </div>
