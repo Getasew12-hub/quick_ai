@@ -46,7 +46,7 @@ function RemoveObject() {
           Authorization: `Bearer ${await getToken()}`,
         },
       });
-  toast.success("i am call now")
+ 
       const resopneseimage = response?.data?.data;
       setContentGene(resopneseimage);
     } catch (error) {
