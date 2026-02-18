@@ -1,4 +1,4 @@
-import { Check, Download, Scissors, Sparkles } from "lucide-react";
+import { Check, DessertIcon, Download, Scissors, Sparkles } from "lucide-react";
 import React from "react";
 import axios from "../middleware/axios";
 import { toast } from "react-hot-toast";
@@ -39,15 +39,14 @@ function RemoveObject() {
      if(!image) return toast.error("Please upload image");
     setLoding(true);
     try {
-      const response = await axios.post(
-        "/ai/image-object-remove",
-        { image, object: Description },
-        {
+  const response = await axios.post("/ai/image-object-remove", {image, object:Description}, {
+        headers: {
+         
           Authorization: `Bearer ${await getToken()}`,
         },
-      );
+      });
 
-      const resopneseimage = response.data.data;
+      const resopneseimage = response?.data?.data;
       setContentGene(resopneseimage);
     } catch (error) {
       toast.error("Something is wrong");
