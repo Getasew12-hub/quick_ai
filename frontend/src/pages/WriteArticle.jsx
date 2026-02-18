@@ -114,7 +114,7 @@ function WriteArticle() {
       </div>
 
       {/* right */}
-      <div className="bg-white shadow  p-4 rounded-md max-w-lg w-full min-h-96  h-fit flex flex-col overflow-hidden pb-10  overflow-y-auto max-h-full">
+      {/* <div className="bg-white shadow  p-4 rounded-md max-w-lg w-full min-h-96  h-fit flex flex-col overflow-hidden pb-10  overflow-y-auto max-h-full">
         <h2 className="flex gap-4 font-bold mb-5 text-xl items-center">
           <SquarePen className="text-blue-500" /> Article Configuration
         </h2>
@@ -131,7 +131,7 @@ function WriteArticle() {
             </div>
           </div>
         )}
-      </div>
+      </div> */}
     </div>
   );
 }
