@@ -48,10 +48,16 @@ function WriteArticle() {
       let index = 0;
 
       const interval = setInterval(() => {
+        if(text[index]){
+
+        
         setContentGene((prev) => prev + text[index]);
         index++;
-
+         }
         if (index === text?.length) {
+          clearInterval(interval);
+        }
+        if(!text[index]){
           clearInterval(interval);
         }
       }, 5);
