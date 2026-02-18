@@ -23,7 +23,7 @@ function DashboardCreation({item}) {
     
 
   <div className='hellow rever-rw overflow-x-hidden!' >
-        {moreData && (item?.type=="image" ? <img src={item?.content} alt="image" className='max-h-96! max-sm:h-60! object-contain! max-w-full '/> :<Markdown>{item?.content}</Markdown>) }
+        {moreData && (item?.type=="image" ? <img src={item?.content} alt="image" className='max-h-96! max-sm:h-60! object-cover! max-w-full! '/> :<Markdown>{item?.content}</Markdown>) }
       </div>
 </div>
   )
