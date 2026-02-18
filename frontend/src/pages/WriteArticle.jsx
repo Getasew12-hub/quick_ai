@@ -38,7 +38,7 @@ function WriteArticle() {
         },
       });
 
-      toast.success("you get the fix fix fix",response.success);
+      toast.success("you get the",response.success);
     const text = response?.data?.data;
       setContentGene(text);
       // let index = 0;
