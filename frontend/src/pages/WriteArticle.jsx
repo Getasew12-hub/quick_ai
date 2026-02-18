@@ -81,7 +81,7 @@ function WriteArticle() {
           />
 
           <p className="text-sm mb-2">Article Length</p>
-          <p>good moring</p>
+          
           <div className="flex flex-wrap gap-3 max-w-80">
             {artilceLength.map((item) => (
               <span
