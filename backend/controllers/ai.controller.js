@@ -10,7 +10,7 @@ import pdf from "pdf-parse/lib/pdf-parse.js"
 const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
 
 export const generetArticle = async (req, res) => {
-  console.log("requst is reqch this postiong ")
+  
   try {
     const { prompt, length } = req.body;
     const { userId } = req.auth();
@@ -32,7 +32,7 @@ export const generetArticle = async (req, res) => {
       Ensure the tone is engaging and informative.
       `,
     });
-  console.log("the ai response is this ",response.text);
+ 
     await sql`INSERT INTO creations (content,prompt,user_id,type) VALUES (${response.text},${prompt},${userId},'article');`;
     if (userPlan !== "premium") {
       await clerkClient.users.updateUserMetadata(userId, {
