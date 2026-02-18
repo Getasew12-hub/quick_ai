@@ -39,13 +39,14 @@ function RemoveObject() {
      if(!image) return toast.error("Please upload image");
     setLoding(true);
     try {
+
   const response = await axios.post("/ai/image-object-remove", {image, object:Description}, {
         headers: {
          
           Authorization: `Bearer ${await getToken()}`,
         },
       });
-
+  toast.success("i am call now")
       const resopneseimage = response?.data?.data;
       setContentGene(resopneseimage);
     } catch (error) {
