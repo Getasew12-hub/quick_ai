@@ -44,7 +44,7 @@ function WriteArticle() {
         },
       );
 
-      toast.success("you get the righ postion",resopnese.success);
+      toast.success("you get the fix fix fix",resopnese.success);
     const text = resopnese.data.data;
       setContentGene(text);
       // let index = 0;
