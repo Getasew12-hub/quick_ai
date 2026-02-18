@@ -14,9 +14,11 @@ import Community from './pages/Community'
 import { useAuth } from '@clerk/clerk-react'
 import { useEffect } from 'react'
 import {Toaster} from "react-hot-toast"
-
+import {useUser} from "@clerk/clerk-react"
+import { Loader } from 'lucide-react'
 function App() {
-
+  const {isLoaded}=useUser();
+if(!isLoaded) return <div className='h-screen w-full flex justify-center items-center overflow-hidden'><Loader size={35} className='animate-spin '/></div>
   return (
     <div >
      

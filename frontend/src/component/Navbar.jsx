@@ -8,7 +8,6 @@ function Navbar() {
   const navigate=useNavigate();
   const {user} = useUser();
   const {openSignIn} = useClerk();
-
  
   return (
     <div className='flex justify-between items-center p-3.5 md:px-10 lg:px-20 backdrop-blur-2xl  xl:px-32 2xl:px-40  bg-cover bg-bottom bg-no-repeat fixed inset-x-0 top-0 z-50'>
