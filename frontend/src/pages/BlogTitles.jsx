@@ -46,7 +46,7 @@ function BlogTitles() {
         setContentGene((prev) => prev + text[index]);
         index++;
 
-        if (index === text.length) {
+        if (index >= text.length) {
           clearInterval(interval);
         }
       }, 10);

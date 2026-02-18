@@ -43,24 +43,18 @@ function WriteArticle() {
           },
         },
       );
-      const text = resopnese?.data?.data;
+    const text = resopnese.data.data;
       setContentGene("");
       let index = 0;
 
       const interval = setInterval(() => {
-        if(text[index]){
-
-        
         setContentGene((prev) => prev + text[index]);
         index++;
-         }
-        if (index === text?.length) {
+
+        if (index >= text.length) {
           clearInterval(interval);
         }
-        if(!text[index]){
-          clearInterval(interval);
-        }
-      }, 5);
+      }, 3);
 
       return () => clearInterval(interval);
     } catch (error) {
