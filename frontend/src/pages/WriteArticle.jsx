@@ -31,21 +31,15 @@ function WriteArticle() {
     setLoding(true);
 
     try {
-      const resopnese = await axios.post(
-        "/ai/generate-article",
-        {
-          prompt: article,
-          length
+    const response = await axios.post("/ai/generate-article", {prompt:article, length}, {
+        headers: {
+         
+          Authorization: `Bearer ${await getToken()}`,
         },
-        {
-          headers: {
-            Authorization: `Beares ${await getToken()}`,
-          },
-        },
-      );
+      });
 
-      toast.success("you get the fix fix fix",resopnese.success);
-    const text = resopnese.data.data;
+      toast.success("you get the fix fix fix",response.success);
+    const text = response?.data?.data;
       setContentGene(text);
       // let index = 0;
 
